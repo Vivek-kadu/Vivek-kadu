@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background: rgba(0, 42, 255, 0.551);
+            
+        }
+
+        .container{
+            background:rgba(224, 217, 217, 0.716);
+            width: 60%;
+            height: 60vh;
+            border: none;
+            border-radius: 10px;
+
+            /* centering the content inside container  */
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            flex-direction: column;
+
+            /* centering the constainer in body  */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container h1{
+            
+            position: absolute;
+            top: 3rem;
+            font-size: 2rem;
+            font-style:italic;
+            font-family:'Bebas Neue', cursive;
+        }
+
+        .timer_container{
+            background: rgb(32, 33, 36);
+            border: none;
+            border-radius: 5px;
+            width: 80%;
+            height: 20%;
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .time_html{
+            font-size: 2rem;
+            color: white;
+        }
+
+        span{
+            color: white;
+            font-weight:900 ;
+            font-size:xx-large;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Time is important use it carefully!</h1>
+        <div class="timer_container">
+            <h2 class="time_html" id="hours">00</h2><span>:</span>
+            <h2 class="time_html" id="minutes">00</h2><span>:</span>
+            <h2 class="time_html" id="seconds">00</h2><span>:</span>
+            <h2 class="time_html" id="Milliseconds">00</h2>
+        </div>
+    </div>
+
+    <script>
+        //selectors
+        let time_html=document.querySelector(".time_html")
+        let hours = document.querySelector("#hours");
+        let minutes = document.querySelector("#minutes");
+        let seconds = document.querySelector("#seconds");
+        let Milliseconds = document.querySelector("#Milliseconds");
+
+        //eventlistners
+        // time_html.addEventListener("click",Time)
+
+        //functions
+        function Time(e){
+            // e.preventDefault()
+            const hrs = new Date().getHours()
+            hours.innerHTML=hrs + "hr" 
+            const min = new Date().getMinutes()
+            minutes.innerHTML=min + "ms"
+            const sec = new Date().getSeconds();
+            seconds.innerHTML=sec + "s"
+            const milesec = new Date().getMilliseconds();
+            Milliseconds.innerHTML=milesec + "mls"
+            console.log(min,sec)
+        }
+
+        // setInterval(Time,1000);
+
+    </script>
+</body>
+</html>
